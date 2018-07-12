@@ -178,3 +178,49 @@ x[2,1]
 x[1,]
 
 x[, 2]
+
+x<-matrix(1:6,2,3)
+x[1,2]
+
+x[1,2,drop = FALSE]
+
+x<-matrix(1:6,2,3)
+x[1, ]
+x[1, , drop = FALSE]
+
+##Subsetting with names(Partial Matching)
+x<-list(aardvark = 1:5)
+x$a
+x[["a"]]
+x[["a", exact = FALSE]]
+
+##Removing NA Values
+x<-c(1,2, NA, 4, NA, 5)
+bad <- is.na(x)
+x[!bad]
+
+x<-c(1,2, NA, 4, NA, 5)
+y<-c("a","b", NA, "d", NA, "f")
+good <- complete.cases(x,y)
+good
+x[good]
+y[good]
+
+airquality[1:6, ]
+good <- complete.cases(airquality)
+
+airquality[good, ][1:6, ]
+
+##Vectorized Operations
+x<- 1:4; y<- 6:9
+x + y
+x > 2
+x >= 2
+y == 8
+x * y
+x / y
+
+x<-matrix(1:4, 2, 2) ; y <- matrix(rep(10,4), 2, 2)
+x * y
+x / y
+x %*% y
