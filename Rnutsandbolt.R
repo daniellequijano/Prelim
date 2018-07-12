@@ -162,3 +162,19 @@ x["bar"]
 x<- list(foo=1:4, bar=0.6, baz="hello")
 x[c(1,3)]
 
+x<- list(a = list(10,12,14), b= c(3.14,2.81))
+x[[c(1,3)]]
+
+x[[1]][[3]]
+
+x[[c(2,1)]]
+
+##SUBSETTING A MATRIX
+x <- matrix(1:6,2,3)
+x[1,2]
+
+x[2,1]
+
+x[1,]
+
+x[, 2]
